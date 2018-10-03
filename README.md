@@ -2,6 +2,8 @@
 
 Meaning Cloud Ruby API Wrapper
 
+[![Build Status](https://travis-ci.org/WaKeMaTTa/meaning_cloud.svg?branch=master)](https://travis-ci.org/WaKeMaTTa/meaning_cloud)
+
 This gem is a ruby API wrapper for [Meaning Cloud](https://www.meaningcloud.com/) [API's](https://www.meaningcloud.com/developer/getting-started).
 
 ## Installation
