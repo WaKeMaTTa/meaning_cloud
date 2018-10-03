@@ -1,8 +1,8 @@
 # MeaningCloud
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/meaning_cloud`. To experiment with that code, run `bin/console` for an interactive prompt.
+Meaning Cloud Ruby API Wrapper
 
-TODO: Delete this and the text above, and describe your gem
+This gem is a ruby API wrapper for [Meaning Cloud](https://www.meaningcloud.com/) [API's](https://www.meaningcloud.com/developer/getting-started).
 
 ## Installation
 
@@ -14,15 +14,52 @@ gem 'meaning_cloud'
 
 And then execute:
 
-    $ bundle
+```bash
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install meaning_cloud
+```bash
+$ gem install meaning_cloud
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+### Pre-requirement
+
+You need a valid `key` to use the gem. You can get it by signing up [here](https://www.meaningcloud.com/developer/getting-started).
+
+If you don't set the `key` it will *raises an exception*.
+
+### Configuration
+
+You can use add initializer for example if you're on Rails.
+
+```ruby
+# config/initializers/meaning_cloud.rb
+
+MeaningCloud.configure do |config|
+  config.key = ENV['MEANING_CLOUD_KEY']                       # REQUIRED
+  config.language = :en                                       # optional, default is :en
+  config.topic_types = 'ec'                                   # optional, default is 'ec'
+  config.api_base = 'https://api.meaningcloud.com/topics-2.0' # optional, default is 'https://api.meaningcloud.com/topics-2.0'
+end
+```
+
+### Extract topics
+
+```ruby
+# Returns a hash of the parsed JSON result.
+result = MeaningCloud::Topics.extract_topics(txt: 'The most amazing text in the world')
+```
+Source [source](https://www.meaningcloud.com/developer/topics-extraction/doc/2.0/examples)
+
+## Status of the gem
+
+Current version only wraps the Topics extraction API's and is focused on specific usage. Feel free to send a pull request with more API's wrapped!
+
+The current gem is based in [TailorBrands/meaning-cloud](https://github.com/TailorBrands/meaning-cloud)
 
 ## Development
 
@@ -32,7 +69,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/meaning_cloud. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at [meaning_cloud repository](https://github.com/wakematta/meaning_cloud). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
