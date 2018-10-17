@@ -20,6 +20,7 @@ module MeaningCloud
         key: configuration.key,
         lang: configuration.language,
         tt: configuration.topic_types,
+        ud: configuration.user_dictionary,
         uw: 'y'
       }.merge(options)
     end
