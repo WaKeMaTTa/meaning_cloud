@@ -41,18 +41,9 @@ RSpec.describe MeaningCloud::Topics do
 
   it 'sends a proper request' do
     MeaningCloud.configuration.key = key
-
-    # expect(RestClient).to receive(
-    #   :post
-    # ).with(
-    #   "https://api.meaningcloud.com/topics-2.0?of=json&key=#{key}&lang=en&tt=ec&uw=y&txt=#{txt.gsub(' ', '+')}", {}
-    # ).and_return(
-    #   result
-    # )
     expect(RestClient).to receive(:post)
-      .with('https://api.meaningcloud.com/topics-2.0', { key: key, lang: :en, of: :json, tt: 'ec', txt: txt, uw: 'y' })
+      .with('https://api.meaningcloud.com/topics-2.0', { key: key, lang: :en, of: :json, tt: 'ec', txt: txt, ud: nil, uw: 'y' })
       .and_return(result)
-
     expect(MeaningCloud::Topics.extract_topics(txt: txt)).to eq(JSON.parse(result))
   end
 end
