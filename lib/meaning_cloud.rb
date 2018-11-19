@@ -4,8 +4,6 @@ require 'meaning_cloud/version'
 require 'meaning_cloud/topics'
 
 module MeaningCloud
-  API_BASE = ""
-
   def self.configuration
     @configuration ||=  Configuration.new
   end
