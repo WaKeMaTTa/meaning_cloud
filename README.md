@@ -4,8 +4,16 @@ Meaning Cloud Ruby API Wrapper
 
 [![Build Status](https://travis-ci.org/WaKeMaTTa/meaning_cloud.svg?branch=master)](https://travis-ci.org/WaKeMaTTa/meaning_cloud)
 [![Maintainability](https://api.codeclimate.com/v1/badges/259a7a056d212cf3e27d/maintainability)](https://codeclimate.com/github/WaKeMaTTa/meaning_cloud/maintainability)
+![GitHub](https://img.shields.io/github/license/wakematta/meaning_cloud.svg)
 
 This gem is a ruby API wrapper for [Meaning Cloud](https://www.meaningcloud.com/) [API's](https://www.meaningcloud.com/developer/getting-started).
+
+## Security
+
+Multifactor authentication:
+
+![Security github.com account](https://img.shields.io/badge/github.com-enabled-brightgreen.svg)
+![Security rubygems.org account](https://img.shields.io/badge/rubygems.org-enabled-brightgreen.svg)
 
 ## Installation
 
